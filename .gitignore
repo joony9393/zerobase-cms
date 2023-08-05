@@ -1,0 +1,12 @@
+# 프로젝트 제외 경로
+/.gradle/
+/order-api/out/
+/order-api/out/production/classes/
+/order-api/out/test/classes/
+/user-api/build/
+/user-api/out/
+/user-api/out/production/classes/
+/zerobase-domain/build/
+/zerobase-domain/out/
+/zerobase-domain/out/production/classes/
+/zerobase-domain/out/test/classes/

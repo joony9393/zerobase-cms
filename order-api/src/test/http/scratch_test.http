@@ -1,0 +1,161 @@
+
+### add product - only for seller
+POST http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NjY2ODk1LCJleHAiOjE2NzU3NTMyOTV9.6zsMBlxaw9-AMOXMdkn8neOj8eCAODluTDlp4HtH6HM
+
+{
+  "description" : "상품 설명",
+  "items" : [
+    {
+      "count": 1,
+      "name": "270",
+      "price": 100000
+    }
+  ],
+  "name": "나이키 에어포스 2"
+}
+
+
+
+### update product
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+{
+  "description" : "상품 설명",
+  "items" : [
+    {
+      "id" : 1,
+      "count": 1,
+      "name": "상품의 아이템",
+      "price": 10000
+    }
+  ],
+  "id" : 1,
+  "name": "나이키 에어포스 한정판"
+}
+
+
+
+### product item add
+POST http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+    {
+      "productId" : 1,
+      "count": 1,
+      "name": "상품의 아이템",
+      "price": 10000
+    }
+
+
+
+### product item Update
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+{
+  "id": 1,
+  "productId" : 1,
+  "count": 1,
+  "name": "상품의 아이템 수정완료.",
+  "price": 15000
+}
+
+
+### delete product
+DELETE http://localhost:8082/seller/product?id=1
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+
+
+### delete product item
+DELETE http://localhost:8082/seller/product/item?id=10
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+
+
+
+### search product
+GET http://localhost:8082/search/product?name=나이키
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+
+
+### search pruduct detail
+GET http://localhost:8082/search/product/detail?productId=3
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+
+
+
+### add cart - only for customer
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NjY4NDAsImV4cCI6MTY3NTc1MzI0MH0.8rWSPff1ZNRmuU2Zb1hiX0LGo2h2_O0OUOoNCTDXSgM
+
+{
+  "id": 1,
+  "name": "나이키 에어포스 2",
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "name": "270",
+      "price": 100000,
+      "count": 1
+    }
+  ]
+}
+
+
+### get cart
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+
+
+
+### order cart
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NjY4NDAsImV4cCI6MTY3NTc1MzI0MH0.8rWSPff1ZNRmuU2Zb1hiX0LGo2h2_O0OUOoNCTDXSgM
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 1,
+      "sellerId": null,
+      "name": "나이키 에어포스 2",
+      "description": "상품 설명",
+      "items": [
+        {
+          "id": 1,
+          "name": "270",
+          "count": 1,
+          "price": 100000
+        }
+      ]
+    }
+  ],
+  "messages": []
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

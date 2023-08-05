@@ -1,0 +1,48 @@
+### sign up request
+POST http://localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "email": "wjddudwns567@naver.com",
+  "name": "정영준",
+  "password": "1111",
+  "birth": "2023-02-04",
+  "phone": "010-0000-0000"
+}
+
+
+### token filter test
+GET http://localhost:8081/customer
+
+
+### sign in customer/seller test
+POST http://localhost:8081/signIn/seller
+Content-Type: application/json
+
+{
+  "email" : "wjddudwns567@naver.com",
+  "password": "1111"
+}
+
+### vefiry email
+GET http://localhost:8081/signup/seller/verify/?email=wjddudwns567@naver.com&code=C9OPmeyvVs
+
+
+
+### change balance - only for customer
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NjY4NDAsImV4cCI6MTY3NTc1MzI0MH0.8rWSPff1ZNRmuU2Zb1hiX0LGo2h2_O0OUOoNCTDXSgM
+
+{
+  "from": "server",
+  "message" : "money charge",
+  "money": 100000
+}
+
+
+
+### customer getInfo
+GET customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
